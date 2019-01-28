@@ -1,3 +1,7 @@
+# A user is presented with the text below. the program allows them to select an option to list all of their tasks, add a task to their list, delete a task, or quit the program.
+
+
+
 def main():
     problem1()
 
@@ -12,25 +16,30 @@ def getList():
     print("0. To quit to the program")
 
 toDo = []
-UserInput = input("What would you like to do")
+
 
 
 
 
 def problem1():
-    while (UserInput != "q"):
 
+    UserInput = ""
+
+    while (UserInput != "0"):
         getList()
+        UserInput = input("What would you like to do")
+
+        # prints items in array
         if (UserInput == "1"):
             for itemsinarray in toDo:
-                print(itemsinarray)
+                print(toDo)
             UserInput = input("What would you like to do?")
-
+        # adds task
         elif (UserInput == "2"):
             addTask = input("Add a task")
             toDo.append(addTask)
             UserInput = input("What would you like to do?")
-
+            #removes a task
         elif (UserInput == "3"):
             removeTask = input("Delete a Task")
             toDo.remove(removeTask)
